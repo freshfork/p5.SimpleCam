@@ -2,7 +2,7 @@
  * 
  * The p5.SimpleCam library - a rudimental 3D CameraControl for p5.js and WEBGL.
  *
- *   Copyright © 2019 by p5.SimpleCam authors
+ *   Copyright Â© 2019 by p5.SimpleCam authors
  *
  *   Source: https://github.com/freshfork/p5.SimpleCam
  *
@@ -51,7 +51,7 @@ class SimpleCam{
     a.addEventListener("dblclick",function(){b.reset()}),
     a.addEventListener("mousedown",function(a){0===a.button&&b.startOrbit(),2===a.button&&b.startZoom()}),
     a.addEventListener("mouseup",function(a){0===a.button&&b.endOrbit(),2===a.button&&b.endZoom()}),
-    a.registerMethod("pre",function(){b.active&&(b.drag(),b.update())})
+    a._renderer._pInst.registerMethod("pre",function(){b.active&&(b.drag(),b.update())})
   }
   startOrbit(){this.rx.start(this.parent.mouseY),this.ry.start(this.parent.mouseX)}
   startZoom(){this.zoom.start(this.parent.mouseY)}
